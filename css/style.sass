@@ -1,0 +1,713 @@
+@import url('normalize.css')
+@import url('reset.css')
+@import url('../fonts/maax/stylesheet.css')
+
+$primary_color: #555555
+$grey_subt: #A9A9A9
+$white: #FFFFFF
+$green: #91B920
+$whitesmoke: #F2F5F5
+
+*
+    box-sizing: border-box
+
+body
+    font-family: 'Maax'
+    
+.container-header
+    max-width: 1320px
+    margin: 0 auto
+
+.container
+    max-width: 1196px
+    margin: 0 auto
+
+.main-title
+    font-style: normal
+    font-weight: 700
+    font-size: 55px
+    line-height: 61px
+    text-align: center
+    color: $primary_color
+    margin-bottom: 14px
+
+.main-title.top-title
+    font-size: 60px
+    line-height: 67px
+
+.main-subtitle
+    font-style: normal
+    font-weight: 400
+    font-size: 21px
+    line-height: 135%
+    text-align: center
+    color: #858585
+.main-subtitle-max
+    max-width: 646px
+    margin: 0 auto
+
+.header
+    padding: 28px 0 26px 0
+    position: sticky
+    background: $white
+    top: 0
+    left: 0
+    transition: 0.5s
+    z-index: 1
+
+.header
+    .container-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+.header.active
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12)
+
+.header__ls
+    display: flex
+    align-items: center       
+
+.header__logo
+    display: flex
+    align-items: center
+    margin-right: 45px
+    text-decoration: none
+    img
+        margin-right: 14.2px
+    span
+        font-style: normal
+        font-weight: 700
+        font-size: 29px
+        line-height: 32px
+        color: $primary_color
+
+.languages
+    position: relative
+    width: 43px
+    .language__chosen
+        font-style: normal
+        font-weight: 500
+        font-size: 17px
+        line-height: 19px
+        color: $grey_subt
+        display: flex
+        align-items: center
+        cursor: pointer
+        transition: 0.5s
+        svg
+            transform: rotate(0deg)
+            transition: 0.5s
+    .language__chosen.active
+        color: #C4C4C4
+        svg
+            transform: rotate(180deg)
+    .languages__list
+        position: absolute
+        width: 90px
+        height: 133px
+        background: $white
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+        border-radius: 10px
+        padding: 23.67px 17.83px 17px 17.83px
+        top: 30px
+        left: -27px
+        transition: 0.5s
+        opacity: 0
+        visibility: hidden
+        .languages__item
+            font-style: normal
+            font-weight: 700
+            font-size: 17px
+            line-height: 19px
+            color: $primary_color
+            padding-left: 27.17px
+            margin-bottom: 19px
+            position: relative
+            cursor: pointer
+        .languages__item.active
+            &::before
+                content: ""
+                position: absolute
+                background: url(../img/lang-check.png) no-repeat center center
+                background-size: contain
+                width: 14.67px
+                height: 11.17px
+                left: 0
+                top: 3px
+
+    .languages__list.active
+        opacity: 1
+        visibility: visible
+
+.header__menu
+        display: flex
+        align-items: center
+        li
+            margin-right: 35px
+            &:last-child
+                margin-right: 0px
+            a
+                font-style: normal
+                font-weight: 500
+                font-size: 17px
+                line-height: 19px
+                color: $grey_subt
+                text-decoration: none
+                padding: 14px 0 10px 0
+                border-bottom: 4px solid transparent
+                transition: 0.5s
+                &:hover
+                    color: $primary_color
+                    border-bottom: 4px solid $green
+            a.current_page_item
+                color: $primary_color
+                border-bottom: 4px solid $green
+
+.header__calback
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 13px 22px
+    gap: 12px
+    background: $white
+    border: 2px solid $green
+    border-radius: 41px
+    font-style: normal
+    font-weight: 500
+    font-size: 17px
+    line-height: 115%
+    color: $green
+    cursor: pointer
+    transition: 0.5s
+    &:hover
+        background: $green
+        color: $white
+        svg
+            path
+                transition: 0.5s
+                fill: $white
+
+.feel-power
+    padding-top: 89px
+
+.feel-power__row
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    max-width: 1000px
+    margin: 44px auto 0 auto
+
+    .feel-power__item
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        padding: 18px 32px
+        gap: 10px
+        background: $whitesmoke
+        border-radius: 50px
+        margin: 14px 8px
+        font-style: normal
+        font-weight: 400
+        font-size: 19px
+        line-height: 135%
+        text-align: center
+        color: $primary_color
+        text-decoration: none
+    .feel-power__item.green
+            background: $green
+            color: $white
+.feel-power-btn__wrapper
+    display: flex
+    justify-content: center
+    margin-top: 50px
+
+.feel-power-btn
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 18px 40px
+    gap: 12px
+    background: $white
+    border: 2px solid $green
+    border-radius: 41px
+    font-style: normal
+    font-weight: 400
+    font-size: 19px
+    line-height: 115%
+    color: $green
+    cursor: pointer
+    text-decoration: none
+    transition: 0.5s
+    &:hover
+        background: $green
+        color: $white
+.why-we
+    padding: 138px 0 161px 0
+
+.why-we-row
+    display: flex
+    justify-content: space-between
+    .why-we__img
+        max-width: 588px
+        width: 100%
+        overflow: hidden
+        img
+            widows: 100%
+            height: 100%
+            object-fit: cover
+
+    .why-we__info
+        padding: 55px 80px 55px 90px
+
+    .why-we-bottom__info
+        padding: 55px 67px 55px 90px
+
+.why-we__title
+    font-style: normal
+    font-weight: 700
+    font-size: 45px
+    line-height: 50px
+    color: $primary_color
+    margin-bottom: 35px
+    span
+        color: $green
+
+.why-we__list
+    padding-left: 40px
+    li
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 210%
+        color: $primary_color
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            width: 6px
+            height: 6px
+            left: -31px
+            top: 15px
+            border-radius: 50%
+            background: $green
+
+.why-we__list.second_block
+    max-width: 418px
+
+.why-we_first
+    margin-bottom: 100px
+
+.appeal
+    margin-bottom: 189px
+.appeal__img
+    margin-right: 61px
+    width: 270px
+    height: 270px
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.appeal__row
+    display: flex
+    justify-content: space-between
+    max-width: 910px
+    margin: 0 auto
+    &:first-child  
+        padding-bottom: 90px
+
+    .appeal__right
+        max-width: 577px
+
+        .appeal__text
+            font-style: italic
+            font-weight: 400
+            font-size: 23px
+            line-height: 150%
+            color: $primary_color
+
+        .appeal__line
+            background: #DDDDDD
+            width: 40px
+            height: 1px
+            margin: 26px 0 17px 0
+
+        .appeal__name
+            font-style: italic
+            font-weight: 400
+            font-size: 21px
+            line-height: 210%
+            color: $primary_color
+
+        .appeal__position
+            font-style: normal
+            font-weight: 400
+            font-size: 20px
+            line-height: 150%
+            color: #C1C1C1
+.vacancies
+    margin-bottom: 160px
+
+.vacancies-block
+    max-width: 900px
+    margin: 0 auto
+
+.vacancies-category
+    display: flex
+    justify-content: flex-end
+    margin: 60px 0 32px 0
+
+.vacancies-category__chosen
+    display: flex
+    align-items: center
+    cursor: pointer
+    span
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 20px
+        color: $primary_color
+    svg
+        margin-right: 9px
+
+.vacancies-list__item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    padding: 38px 0 36px 0
+    border-bottom: 1px solid #E7E7E7
+    cursor: pointer
+    &:first-child
+        border-top: 1px solid #E7E7E7
+
+.vacancies-list__position
+    max-width: 664px
+    width: 100%
+    font-style: normal
+    font-weight: 500
+    font-size: 24px
+    line-height: 135%
+    color: $primary_color
+    img
+        position: relative
+        top: 6px
+        margin-right: 10px
+
+.vacancies-list__location
+    max-width: 215px
+    width: 100%
+    font-style: normal
+    font-weight: 400
+    font-size: 21px
+    line-height: 135%
+    color: #A9A9A9
+.lets-tolk
+    margin-bottom: 154px
+
+.lets-tolk-circle
+    display: flex
+    justify-content: center
+    margin-top: 70px
+
+.lets-tolk-circle__info
+    width: 370px
+    height: 370px
+    background: url(../img/circle.png) no-repeat center center
+    background-size: contain
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    cursor: pointer
+    transition: 0.5s
+    &:hover
+        .lets-tolk-circle__text
+            text-decoration: underline
+
+.lets-tolk-circle__text
+    font-style: normal
+    font-weight: 700
+    font-size: 35px
+    line-height: 60px
+    text-align: center
+    color: $white
+    margin-top: 10px
+    
+.lets-tolk-circle__shadow
+    position: absolute
+    z-index: -1
+    background: url(../img/shadow.png) no-repeat center center
+    background-size: contain
+    width: 549px
+    height: 470px
+    top: 67px
+    left: -38px
+.footer
+    padding: 33px 0 40px 0
+.footer_social
+    display: flex
+    justify-content: center
+    margin-bottom: 27.27px
+    a.facebook,
+    a.linked-in
+        svg
+            margin: 0 13.6px
+            transition: 0.5s
+            &:hover
+                path
+                    fill: $green
+    a.twitter
+        svg
+            margin: 0 13.6px
+            transition: 0.5s
+            &:hover
+                circle
+                    fill: $green
+
+.copyright
+    display: flex
+    justify-content: center
+    .copyright_f
+        font-style: normal
+        font-weight: 400
+        font-size: 15px
+        line-height: 17px
+        text-align: center
+        color: #B9B9B9
+        margin-right: 45px
+    .copyright_t
+        font-style: normal
+        font-weight: 400
+        font-size: 15px
+        line-height: 17px
+        color: #B9B9B9
+        text-align: center
+
+.burger
+    width: 60px
+    height: 40px
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    flex-direction: column
+    padding: 14px
+    display: none
+    div
+        &:first-child
+            width: 30px
+            height: 3px
+            background: $green
+            margin-bottom: 5px
+        &:last-child
+            width: 20px
+            height: 3px
+            background: $green
+
+.mobile-menu
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background: #3C3C3C
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    transition: 0.5s
+    transform: translateX(-100%)
+    display: none
+
+    .mobile-menu__copyrightt
+        font-style: normal
+        font-weight: 400
+        font-size: 15px
+        line-height: 17px
+        text-align: center
+        text-decoration-line: underline
+        color: #C1C1C1
+        margin-bottom: 30px
+    .mobile-menu__copyrightb
+        font-style: normal
+        font-weight: 400
+        font-size: 15px
+        line-height: 25px
+        text-align: center
+        color: #858585
+        margin-bottom: 20px
+
+.mobile-menu.active
+    transform: translateX(0%)
+
+.mobile-menu__close
+    position: absolute
+    left: 27px
+    top: 40px
+
+.mobile-menu__list
+    margin-top: 184px 
+    li
+        font-style: normal
+        font-weight: 700
+        font-size: 27px
+        line-height: 30px
+        text-align: center
+        color: #FFFFFF
+        margin-bottom: 53px
+.mobile-menu__list       
+    li.mobile-menu-item__green
+        color: $green
+
+@media screen and ( max-width: 1360px  )
+    .container-header
+        width: 90%
+
+@media screen and ( max-width: 1200px  )
+    .container
+        width: 90%
+
+@media screen and ( max-width: 1169px  )
+    .header__menu
+        display: none
+    .burger
+        display: block
+    .mobile-menu
+        display: flex
+
+@media screen and ( max-width: 820px  )
+    .feel-power__row
+        flex-wrap: nowrap
+        overflow-x: scroll
+        justify-content: flex-start
+
+        .feel-power__item
+            white-space: nowrap
+            
+    .why-we-row
+        flex-direction: column
+        .why-we__img 
+            margin: 0 auto
+    .why-we_first
+        margin-bottom: 50px
+    
+    .appeal__row
+        flex-direction: column
+        align-items: center
+        .appeal__img
+            margin-right: 0px
+            margin-bottom: 30px
+    
+    .why-we_second
+        flex-direction: column-reverse
+
+@media screen and ( max-width: 670px  )
+
+    .lets-tolk-circle__shadow
+            width: 100%
+
+@media screen and ( max-width: 600px  )
+    .languages
+        .languages__list
+            left: -50px
+        .language__chosen
+            color: $green
+            font-weight: 500
+            font-size: 19px
+            line-height: 21px
+            svg
+                path
+                    fill: #ACACAC
+
+    .header__calback
+        display: none
+
+    .copyright
+        flex-direction: column
+        align-items: center
+
+        .copyright_f
+            margin-right: 0px
+
+    .header
+        padding: 31px 0 12px 0
+
+    .header__ls
+        justify-content: space-between
+        width: 100%
+
+    .header__logo
+        margin-right: 0
+
+    .why-we
+        padding: 60px 0 5px 0
+
+    .main-title.top-title 
+        font-size: 36px
+        line-height: 1
+    
+    .why-we-row
+        .why-we__img
+            height: 400px
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+    .why-we-row
+        .why-we__info
+            padding: 55px 0px 55px 0px
+
+    .why-we-row
+        .why-we-bottom__info
+            padding: 55px 0px 55px 0px
+
+    .why-we__title
+        font-size: 36px
+        line-height: 1
+
+    .appeal__row
+        .appeal__right
+            .appeal__text
+                font-size: 16px
+                line-height: 150%
+
+    .vacancies-list__item
+        flex-wrap: wrap
+        .vacancies-list__arrow
+            position: absolute
+            top: 50%;
+            right: 0;
+            transform: translateY(-12%);
+
+    .vacancies,
+    .appeal
+        margin-bottom: 60px
+
+    .appeal__row:first-child
+        padding-bottom: 60px
+
+    .why-we_first
+        margin-bottom: 5px
+
+@media screen and ( max-width: 400px  )
+    .why-we__title 
+        font-size: 32px
+
+    .main-title
+        font-size: 42px
+    
+    .mobile-menu__list
+        margin-top: 120px;
+
+@media screen and ( max-width: 320px  )
+    .vacancies-list__position
+        padding-right: 30px
+    
+    .mobile-menu__list
+        margin-top: 160px;
